@@ -1,3 +1,4 @@
+import turtle
 from turtle import Turtle
 
 STARTING_POSITION = (0, -280)
@@ -12,7 +13,7 @@ class Player(Turtle):
         self.shape("turtle")
         self.penup()
         self.color("black")
-        self.left(90)
+        self.setheading(90)
         self.goto(STARTING_POSITION)
 
     def move_up(self):
@@ -30,4 +31,3 @@ class Player(Turtle):
     def move_down(self):
         if self.ycor() > -290:
             self.goto(self.xcor(), self.ycor() - MOVE_DISTANCE)
-
