@@ -20,7 +20,6 @@ screen.onkey(player.move_right, "Right")
 screen.onkey(player.move_left, "Left")
 screen.onkey(player.move_down, "Down")
 
-
 while game_is_on:
     time.sleep(0.1)
     screen.update()
@@ -31,10 +30,11 @@ while game_is_on:
             scoreboard.game_over()
             game_is_on = False
 
-    #Detect a successful crossing
+    # Detect a successful crossing
     if player.is_at_finish_line():
         player.go_to_start()
         car_manager.level_up()
         scoreboard.update_level()
+        player.player_upgrade_speed()
 
 screen.exitonclick()
